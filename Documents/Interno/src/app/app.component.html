@@ -1,0 +1,23 @@
+<mat-toolbar class="toolbar">
+  <span>TAREAS</span>
+  <nav mat-tab-nav-bar [tabPanel]="tabPanel">
+    <a
+      *ngFor="let route of routes"
+      mat-tab-link
+      [routerLink]="route.path"
+      (click)="activeLink = route.path"
+      [active]="activeLink === route.path">
+      {{ route.path }}
+    </a>
+  </nav>
+
+  <mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>
+
+</mat-toolbar>
+
+<router-outlet></router-outlet>
+
+
+
+
+
